@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIVI</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Styles for About and Projects Modals */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .modal-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 500px;
+            text-align: center;
+        }
+        .modal-content h2 {
+            margin-top: 0;
+        }
+        .close-btn {
+            cursor: pointer;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <video autoplay loop muted plays-inline class="back-video">
+            <source src="pp.mp4" type="video/mp4">
+        </video>
+        <nav>
+            <img src="ut.jpeg" alt="logo" class="logo">
+            <ul>
+                <li><a href="#" id="about-btn">About</a></li>
+                <li><a href="https://github.com/divi-24" target="_blank">GitHub</a></li>
+                <li><a href="https://www.linkedin.com/in/deepak-gupta-42b58230a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">LinkedIn</a></li>
+            </ul>
+        </nav>
+        <div class="content">
+            <h1>Deepak Gupta </h1>
+            <!-- Explore Button that opens Projects Modal -->
+            <a href="#" id="explore-btn">PROJECTS</a>
+        </div>
+    </div>
+
+    <!-- About Modal -->
+    <div class="modal" id="about-modal">
+        <div class="modal-content">
+            <h2>About Me</h2>
+            <p>I am Deepak Gupta, a B.Tech first-year student in Computer Science and Engineering at G.L. Bajaj Institute of Technology and management. I'm passionate about development and currently learning skills like JavaScript and React. I have been a contributor in GSSoC & Hacktoberfest where I gained valuable experience and learned new skills.</p>
+            <button class="close-btn" id="close-about">Close</button>
+        </div>
+    </div>
+
+    <!-- Projects Modal -->
+    <div class="modal" id="projects-modal">
+        <div class="modal-content">
+            <h2>Projects</h2>
+            <ul>
+                <li><strong>Project-1:</strong> <a href="http://127.0.0.1:5503/" target="_blank">Carousel</a></li>
+                <li><strong>Project-2:</strong> <a href="http://127.0.0.1:5502/" target="_blank"> Registration page</a></li>
+            </ul>
+            <button class="close-btn" id="close-projects">Close</button>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript for opening and closing the About modal
+        const aboutBtn = document.getElementById('about-btn');
+        const aboutModal = document.getElementById('about-modal');
+        const closeAbout = document.getElementById('close-about');
+
+        aboutBtn.addEventListener('click', function() {
+            aboutModal.style.display = 'flex';
+        });
+
+        closeAbout.addEventListener('click', function() {
+            aboutModal.style.display = 'none';
+        });
+
+        window.addEventListener('click', function(event) {
+            if (event.target === aboutModal) {
+                aboutModal.style.display = 'none';
+            }
+        });
+
+        // JavaScript for opening and closing the Projects modal
+        const exploreBtn = document.getElementById('explore-btn');
+        const projectsModal = document.getElementById('projects-modal');
+        const closeProjects = document.getElementById('close-projects');
+
+        exploreBtn.addEventListener('click', function(event) {
+            event.preventDefault();
+            projectsModal.style.display = 'flex';
+        });
+
+        closeProjects.addEventListener('click', function() {
+            projectsModal.style.display = 'none';
+        });
+
+        window.addEventListener('click', function(event) {
+            if (event.target === projectsModal) {
+                projectsModal.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
