@@ -97,6 +97,32 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    @media (max-width: 768px) {
+  body {
+    font-size: 16px;
+    padding: 10px;
+  }
+  
+  .container {
+    flex-direction: column; /* For stacking elements vertically */
+  }
+
+  .navbar, .footer {
+    flex-wrap: wrap;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 24px;
+  }
+
+  .menu-item {
+    display: block;
+    margin: 10px 0;
+  }
+}
     min-height: 100vh;
     margin: 0;
 }
